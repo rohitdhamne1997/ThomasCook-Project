@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8" />
+
+   
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.oesmith.co.uk/morris-0.5.1.css" rel="stylesheet" />
+    <style>
+        .validationMessage{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="margin-top: 7%;">
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+               
+                <div class="panel panel-default">
+
+                    <div class="panel-heading"> <span class="glyphicon glyphicon glyphicon-tag" aria-hidden="true"></span> <b>Add New Employee</b></div>
+                    <div class="panel-body">
+
+                        <form data-bind="submit: addNewEmployee" onsubmit="return Viewself()" method="post">
+
+                            
+
+                            <div class="form-group">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName"    class="form-control" data-bind="value:FirstName" placeholder="First Name"   />
+                            </div><!-- END FIRST NAME -->
+
+                            <div class="form-group">
+                                <label for="LastName">Last Name</label>
+                                <input type="text" id="LastName" class="form-control" data-bind="value: LastName" placeholder="Last Name" />
+                            </div><!-- END LAST NAME -->
+
+
+                            <div class="form-group">
+                                <label for="Date_Of_Birth">Date_Of_Birth</label>
+                                <input type="date" id="Date_Of_Birth" class="form-control" data-bind="value:Date_Of_Birth" placeholder="Date_Of_Birth" />
+                            </div><!-- END Date_Of_Birth -->
+
+                            <div class="form-group">
+                                <label for="Age">Age</label>
+                                <input type="text" id="Age" class="form-control" data-bind="value:Age" placeholder="Age" />
+                            </div><!-- END Age -->
+
+
+                            
+                            <div class="form-group">
+                                <label for="Pin_Coad">Pin_Code</label>
+                                <input type="text" id="Pin_Code" class="form-control" data-bind="value: Pin_Code" placeholder="Pin_Code" />
+                            </div> <!-- END Pin_Coad -->
+
+                            <div class="form-group">
+                                <label for="Address">Address</label>
+                                <input type="text" id="Address" class="form-control" data-bind="value: Address" placeholder="Address" />
+                            </div> <!-- END Address -->
+
+                            <div class="form-group">
+                                <label for="State">State</label>
+                                <input type="text" id="State" class="form-control" data-bind="value: State" placeholder="State" />
+                            </div> <!-- END State -->
+
+                            <div class="form-group">
+                                <label for="City">City</label>
+                                <input type="text" id="City" class="form-control" data-bind="value: City" placeholder="City" />
+                            </div> <!-- END City -->
+
+                            <div class="form-group">
+                                <label for="Email_id">Email_id</label>
+                                <input type="email" id="Email_id" class="form-control" data-bind="value: Email_id" placeholder="Email_id" />
+                            </div> <!-- END EMAIL -->
+
+
+                            <div class="form-group">
+                                <label for="Country">Country</label>
+                                <input type="text" id="Country" class="form-control" data-bind="value: Country" placeholder="Country" />
+                            </div> <!-- END Country -->
+
+
+                            <button type="submit" class="btn btn-success"  id="Save">
+                                <span class="glyphicon  glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Submit
+                            </button>
+
+                        </form> 
+
+                    </div> 
+
+                </div>
+
+            </div> 
+
+           
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <span class="glyphicon  glyphicon glyphicon-tag" aria-hidden="true"></span>  <b>Employee List </b>
+                       
+                    </div>
+
+                    <div class="panel-body table-responsive" >
+
+                        <table class="table table-hover table-bordered">
+
+                            <thead class="thead-light">
+                                <tr>
+                                                  
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date_Of_Birth</th>
+                                    <th>Age</th>
+                                    <th>Pin_Code</th>
+                                    <th>Address</th>
+                                    <th>State</th>
+                                    <th>City</th>
+                                    <th>Email</th>
+                                    <th>Country</th>
+                                    
+                                </tr>
+                            </thead> <!-- END THEAD -->
+
+                            <tbody data-bind="foreach: EmployeeLists">
+
+                                <tr>
+
+                                   <td> <span data-bind="text: $index ()+1"></span> </td>
+                                    <td> <span data-bind="text: FirstName"></span></td>
+                                    <td> <span data-bind="text: LastName"></span></td>
+                                    <td> <span data-bind="text: Date_Of_Birth"></span></td>
+
+                                    <td> <span data-bind="text: Age"></span></td>
+                                    <td> <span data-bind="text: Pin_Code"></span></td>
+                                    <td> <span data-bind="text: Address"></span></td>
+                                    <td> <span data-bind="text: State"></span></td>
+                                    <td> <span data-bind="text: City"></span></td>
+                                    <td> <span data-bind="text: Email_id"></span> </td>
+                                    <td> <span data-bind="text: Country"></span> </td>
+                                    <td>
+
+                                      
+                                    </td>
+
+                                </tr>
+
+
+
+                            </tbody> 
+
+                        </table> 
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div> 
+
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="knockout.validation.js"></script>
+    <script src="Validation.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+   
+   
+
+</body>
+</html>
